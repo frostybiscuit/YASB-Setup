@@ -29,7 +29,7 @@ This cannot be hosted on the official YASB themes repo due to its complex CSS st
 If you want to configure the widgets I would highly suggest to check the documentation on the official [YAML repository](https://github.com/amnweb/yasb/blob/main/docs/Configuration.md).
 
 ### Styling
-As for the styling, it would also be best to follow the guides and examples from the YAML documentations. But if you only want to adapt some colors, font-sizes and maybe spacings, simply open the **global-styles.css** which is in **/styles/global** and adapt the variables to your liking.<br>
+As for the styling, it would also be best to follow the guides and examples from the YAML documentations. But if you only want to adapt some colors, font-sizes and maybe spacings, simply open the **styles.css** from the root folder and adapt the variables to your liking.<br>
 The individual widget styles are then located in **/styles/widgets**.
 
 ## Known issues
