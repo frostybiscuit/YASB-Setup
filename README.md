@@ -22,6 +22,7 @@ This cannot be hosted on the official YASB themes repo due to its complex CSS st
  - Rename **config.public.yaml** to **config.yaml**
  - Rename **.env.sample** to **.env**
  - *(Optional)* Open the **.env** file and change the Weather API key and location if you want to use the weather widget
+ - Install the [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) for the icons to work
 
 ## Configuration
 
@@ -31,6 +32,9 @@ If you want to configure the widgets I would highly suggest to check the documen
 ### Styling
 As for the styling, it would also be best to follow the guides and examples from the YAML documentations. But if you only want to adapt some colors, font-sizes and maybe spacings, simply open the **styles.css** from the root folder and adapt the variables to your liking.<br>
 The individual widget styles are then located in **/styles/widgets**.
+
+### Font
+If you don't like the font, you can install a different [Nerd Font](https://www.nerdfonts.com/font-downloads) and change it in the **/styles/global/global-styles.css**.
 
 ## Known issues
 
