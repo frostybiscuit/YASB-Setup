@@ -1,0 +1,161 @@
+/* LAUNCHPAD WIDGET */
+/* Widget style */
+.launchpad-widget {
+  padding: 0 6px 0 6px;
+}
+.launchpad-widget .icon {
+  font-size: 18px;
+}
+
+/* Launchpad App dialog style */
+.launchpad .app-dialog {
+  background-color: var(--color-background-main-transparent);
+}
+.launchpad .app-dialog .buttons-container {
+  background-color: transparent;
+  padding: 0 20px 0 20px;
+  margin-top: 16px;
+  max-height: 80px;
+  min-height: 80px;
+}
+.launchpad .app-dialog .message {
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 10px 0;
+}
+.launchpad .app-dialog .title-field,
+.launchpad .app-dialog .path-field,
+.launchpad .app-dialog .icon-field {
+  background-color: var(--color-background-main);
+  border-bottom: 1px solid var(--color-text);
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+  margin: 10px 0px 5px 0;
+  border-radius: 0;
+  min-height: 30px;
+  padding: 0 6px;
+}
+.launchpad .app-dialog .title-field:focus,
+.launchpad .app-dialog .path-field:focus,
+.launchpad .app-dialog .icon-field:focus {
+  border-bottom-color: var(--color-primary);
+}
+.launchpad .app-dialog .button {
+  background-color: var(--color-background-secondary);
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+  margin: 10px 0 5px 6px;
+  border-radius: 4px;
+  min-height: 28px;
+  min-width: 80px;
+  padding: 0 6px;
+  outline: none;
+  border: none;
+}
+.launchpad .app-dialog .buttons-container .button {
+  font-size: var(--font-size-text);
+  margin: 10px 0 5px 0px;
+}
+.launchpad .app-dialog .button:focus {
+  border: 2px solid #adadad;
+}
+.launchpad .app-dialog .button:focus,
+.launchpad .app-dialog .button:hover {
+  background-color: #4a4a4a;
+}
+.launchpad .app-dialog .button:pressed {
+  background-color: #3a3a3a;
+}
+.launchpad .app-dialog .button.add,
+.launchpad .app-dialog .button.save {
+  background-color: var(--color-primary);
+}
+.launchpad .app-dialog .button.add:focus,
+.launchpad .app-dialog .button.save:focus,
+.launchpad .app-dialog .button.add:hover,
+.launchpad .app-dialog .button.save:hover {
+  background-color: var(--color-primary-hover);
+}
+.launchpad .app-dialog .button.delete {
+  background-color: var(--color-error);
+}
+.launchpad .app-dialog .button.delete:focus,
+.launchpad .app-dialog .button.delete:hover {
+  background-color: var(--color-error-hover);
+}
+.launchpad .app-dialog .warning-message {
+  background-color: var(--color-warning-transparent);
+  border: 1px solid var(--color-warning);
+  font-size: var(--font-size-text);
+  color: var(--color-warning);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 4px 0px;
+}
+
+/* Launchpad popup style */
+.launchpad .drop-overlay {
+  background-color: var(--color-background-main-transparent);
+}
+.launchpad .drop-overlay .text {
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-size: 64px;
+}
+.launchpad .launchpad-container {
+  background-color: var(--color-background-main-transparent);
+}
+.launchpad .search-container {
+  background-color: transparent;
+  min-height: 80px;
+  padding: 0;
+  margin: 0;
+}
+.launchpad .search-input {
+  background-color: var(--color-background-main-transparent);
+  color: var(--color-text-disabled);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 8px 12px;
+  min-height: 24px;
+  max-height: 24px;
+  max-width: 400px;
+  font-size: 14px;
+}
+.launchpad .search-input:focus {
+  background-color: var(--color-background-light-transparent-10);
+  border-color: var(--color-primary);
+}
+.launchpad .launchpad-scroll-area {
+  background-color: transparent;
+  border: none;
+}
+.launchpad .app-icon {
+  background-color: transparent;
+  border: 2px solid transparent;
+  margin: 24px 6px 6px 6px;
+  border-radius: 12px;
+  padding-top: 10px;
+  max-height: 110px;
+  min-height: 110px;
+  max-width: 110px;
+  min-width: 110px;
+}
+.launchpad .app-icon:focus {
+  background-color: var(--color-background-light-transparent-10);
+  border: 2px solid var(--color-primary);
+}
+.launchpad .app-icon:hover {
+  background-color: var(--color-background-light-transparent-20);
+  border: 2px solid var(--color-primary);
+}
+.launchpad .app-icon .title {
+  font-size: var(--font-size-text);
+  color: var(--color-text-hover);
+  margin-top: 2px;
+}
+.launchpad .app-icon .icon {
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,169 @@
+/* MEDIA WIDGET */
+.media-widget {
+  border-radius: 16px;
+  padding: 0 0 0 2px;
+  margin: 0 4px 0 0;
+}
+.media-widget .label {
+  background-color: transparent;
+  font-weight: bold;
+}
+.media-widget .btn {
+  color: var(--color-text);
+  padding: 0 6px;
+  margin: 4px 0;
+}
+.media-widget .btn:hover {
+  color: var(--color-text-hover);
+}
+.media-widget .btn.play {
+  font-size: var(--font-size-icon);
+  border-radius: 14px;
+}
+.media-widget .btn.disabled:hover,
+.media-widget .btn.disabled {
+  color: var(--color-text-disabled);
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.media-menu {
+  min-width: 500px;
+  max-width: 500px;
+  background-color: var(--color-background-main-transparent);
+}
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+  font-size: var(--font-size-text);
+  margin-left: 10px;
+}
+.media-menu .title {
+  color: var(--color-text-hover);
+  font-size: var(--font-size-icon);
+  margin-bottom: 4px;
+}
+.media-menu .artist {
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+.media-menu .source {
+  background-color: var(--color-background-light);
+  font-size: var(--font-size-text);
+  color: var(--color-text-dark);
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+.media-menu .source.youtube-music {
+  background-color: var(--color-youtube);
+  color: var(--color-text-hover);
+}
+.media-menu .source.firefox {
+  background-color: var(--color-firefox);
+  color: var(--color-text-hover);
+}
+.media-menu .source.spotify {
+  background-color: var(--color-spotify);
+  color: var(--color-text-hover);
+}
+.media-menu .source.edge {
+  background-color: var(--color-edge);
+  color: var(--color-text-hover);
+}
+.media-menu .source.windows-media {
+  background-color: var(--color-windows);
+  color: var(--color-text-hover);
+}
+
+.media-menu .btn {
+  font-family: "Segoe Fluent Icons";
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 2px 0px 2px;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border-radius: 20px;
+}
+.media-menu .btn.prev {
+  margin-left: 10px;
+}
+.media-menu .btn:hover {
+  background-color: var(--color-background-light-transparent-10);
+  color: var(--color-text-hover);
+}
+.media-menu .btn.play {
+  background-color: var(--color-background-light-transparent-10);
+  font-size: 20px;
+}
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+  color: var(--color-text-disabled);
+  background-color: transparent;
+}
+
+.media-menu .playback-time {
+  color: var(--color-text);
+  font-size: var(--font-size-text);
+  min-width: 100px;
+  margin-top: 20px;
+}
+.media-menu .progress-slider {
+  border-radius: 3px;
+  margin: 5px 4px;
+  height: 10px;
+}
+.media-menu .progress-slider::groove {
+  background: var(--color-background-light-transparent-10);
+  border-radius: 3px;
+  height: 2px;
+}
+.media-menu .progress-slider::groove:hover {
+  background: var(--color-background-light-transparent-20);
+  border-radius: 3px;
+  height: 6px;
+}
+.media-menu .progress-slider::sub-page {
+  background: var(--color-text-hover);
+  border-radius: 3px;
+  height: 4px;
+}
+
+.media-menu .app-volume-container {
+  background-color: var(--color-background-main-transparent);
+  padding: 8px 6px;
+  border-radius: 16px;
+  margin-left: 30px;
+}
+.media-menu .app-volume-container .volume-slider::groove {
+  background: var(--color-background-light-transparent-10);
+  width: 2px;
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::add-page {
+  background: var(--color-text-hover);
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::groove:hover {
+  background: var(--color-background-light-transparent-10);
+  width: 6px;
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .volume-slider::sub-page {
+  background: var(--color-background-light-transparent-10);
+  border-radius: 3px;
+}
+.media-menu .app-volume-container .mute-button,
+.media-menu .app-volume-container .unmute-button {
+  font-size: 16px;
+  color: var(--color-text-hover);
+  font-family: "Segoe Fluent Icons";
+  margin-top: 4px;
+}
+.media-menu .app-volume-container .unmute-button {
+  color: var(--color-text-disabled);
+}

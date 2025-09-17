@@ -1,0 +1,17 @@
+/* APPS WIDGET */
+.apps-widget {
+  padding: 0 4px;
+}
+.apps-widget .widget-container {
+  background-color: var(--color-background-main-transparent);
+  border-radius: 13px;
+  margin: 5px 0;
+}
+.apps-widget .label {
+  font-size: var(--font-size-icon);
+  padding: 0px 2px 1px 2px;
+  color: var(--color-text);
+}
+.apps-widget .label:hover {
+  color: var(--color-text-hover);
+}

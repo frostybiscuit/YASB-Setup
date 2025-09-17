@@ -1,0 +1,69 @@
+/* GLOBAL CONTEXT MENU */
+.context-menu,
+.context-menu .menu-checkbox {
+  background-color: var(--color-background-main);
+  color: var(--color-text);
+  padding: 4px 0px;
+  border: none;
+}
+.context-menu::right-arrow {
+  padding-right: 24px;
+  width: 8px;
+  height: 8px;
+}
+.context-menu::item,
+.context-menu .menu-checkbox {
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 2px 6px;
+  min-width: 100px;
+}
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-hover);
+}
+.context-menu::separator {
+  background-color: var(--color-background-secondary);
+  margin: 4px 8px;
+  height: 1px;
+}
+.context-menu::item:disabled {
+  color: var(--color-text-disabled);
+  background-color: transparent;
+}
+.context-menu .menu-checkbox .checkbox {
+  color: var(--color-text);
+  padding: 8px 16px;
+  margin: 0;
+  border: none;
+}
+.context-menu .submenu::item:disabled {
+  padding-left: 16px;
+  margin: 0;
+}
+.context-menu .menu-checkbox .checkbox:unchecked {
+  color: var(--color-text-disabled);
+}
+.context-menu .menu-checkbox .checkbox::indicator {
+  margin-right: 8px;
+  margin-left: 0px;
+  height: 12px;
+  width: 12px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+  background: var(--color-text-disabled);
+  border-radius: 2px;
+}
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+.context-menu .menu-checkbox .checkbox:focus {
+  outline: none;
+}
+.context-menu::item:checked {
+  background-color: var(--color-primary);
+  color: var(--color-text-hover);
+}

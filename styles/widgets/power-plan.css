@@ -1,0 +1,48 @@
+/* POWER PLAN WIDGET */
+.power-plan-widget {
+  padding: 0;
+}
+.power-plan-widget .label {
+  font-size: var(--font-size-text);
+}
+.power-plan-widget .icon {
+  font-size: var(--font-size-icon);
+}
+
+.power-plan-menu {
+  background-color: var(--color-background-main-transparent);
+}
+.power-plan-widget .label {
+  padding-left: 4px;
+}
+.power-plan-widget .icon.balanced,
+.power-plan-widget .label.balanced {
+  color: var(--color-power-plan-balanced);
+}
+.power-plan-widget .icon.high-performance,
+.power-plan-widget .label.high-performance {
+  color: var(--color-power-plan-high-performance);
+}
+.power-plan-widget .icon.power-saver,
+.power-plan-widget .label.power-saver {
+  color: var(--color-power-plan-power-saver);
+}
+
+.power-plan-menu .menu-content {
+  margin: 10px;
+}
+.power-plan-menu .menu-content .button {
+  font-size: var(--font-size-text);
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 6px 12px;
+  text-align: left;
+  margin: 1px 0;
+  border: none;
+}
+.power-plan-menu .menu-content .button.active {
+  background-color: var(--color-background-light-transparent-10);
+}
+.power-plan-menu .menu-content .button:hover {
+  background-color: var(--color-background-light-transparent-20);
+}

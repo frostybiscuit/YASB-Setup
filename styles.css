@@ -1,0 +1,62 @@
+/* Global Variables */
+:root {
+  --color-background-main: rgb(15, 15, 15);
+  --color-background-main-transparent: rgba(15, 15, 15, 0.5);
+  --color-background-secondary: rgb(55, 55, 55);
+  --color-background-light: rgb(222, 222, 222);
+  --color-background-light-transparent-10: rgba(222, 222, 222, 0.1);
+  --color-background-light-transparent-20: rgba(222, 222, 222, 0.2);
+  --color-text: #cccccc;
+  --color-text-dark: #222222;
+  --color-text-hover: #ffffff;
+  --color-text-disabled: #666666;
+  --color-primary: #0078d7;
+  --color-primary-hover: #005a9e;
+  --color-error: #bd2d14;
+  --color-error-hover: #a00b00;
+  --color-warning: #f1c40f;
+  --color-warning-transparent: rgba(241, 196, 15, 0.5);
+  --color-youtube: #ff0033;
+  --color-firefox: #ff583b;
+  --color-spotify: #199143;
+  --color-edge: #0078d4;
+  --color-windows: #2386c8;
+  --color-winget: #2bbfa1;
+  --color-notification: #ffb86c;
+  --color-weather-sunny-day: #ddd26b;
+  --color-weather-clear-night: #6bbddd;
+  --color-power-plan-balanced: #f9e2af;
+  --color-power-plan-high-performance: #f38ba8;
+  --color-power-plan-power-saver: #89b4fa;
+  --color-komorebi-control-start: rgba(25, 145, 67, 0.5);
+  --color-komorebi-control-start-hover: rgb(25, 145, 67);
+  --color-komorebi-control-stop: rgba(189, 45, 20, 0.5);
+  --color-komorebi-control-stop-hover: rgb(189, 45, 20);
+  --color-komorebi-control-reload: rgba(0, 120, 215, 0.5);
+  --color-komorebi-control-reload-hover: rgb(0, 120, 215);
+  --color-taskbar-flashing: rgba(255, 184, 108, 0.5);
+  --font-size-text: 13px;
+  --font-size-icon: 16px;
+  --widget-spacing: 0 8px;
+}
+
+/* Global Styles */
+@import url("styles/global/global-styles.css");
+@import url("styles/global/context-menu.css");
+
+/* Widget Styles */
+@import url("styles/widgets/apps.css");
+@import url("styles/widgets/weather.css");
+@import url("styles/widgets/media.css");
+@import url("styles/widgets/taskbar.css");
+@import url("styles/widgets/systray.css");
+@import url("styles/widgets/calendar.css");
+@import url("styles/widgets/audio.css");
+@import url("styles/widgets/notification.css");
+@import url("styles/widgets/recycle-bin.css");
+@import url("styles/widgets/home.css");
+@import url("styles/widgets/update-check.css");
+@import url("styles/widgets/power-plan.css");
+@import url("styles/widgets/komorebi-control.css");
+@import url("styles/widgets/komorebi-layout.css");
+@import url("styles/widgets/launchpad.css");

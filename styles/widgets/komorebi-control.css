@@ -1,0 +1,52 @@
+/* KOMOREBI CONTROL WIDGET */
+.komorebi-control-widget .label {
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+}
+
+.komorebi-control-menu {
+  background-color: var(--color-background-main-transparent);
+}
+
+.komorebi-control-menu .button {
+  background-color: var(--color-background-light-transparent-10);
+  color: var(--color-text);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 32px;
+}
+
+.komorebi-control-menu .button:hover {
+  background-color: var(--color-background-light-transparent-20);
+  color: var(--color-text-hover);
+}
+
+.komorebi-control-menu .button.start {
+  color: var(--color-komorebi-control-start);
+}
+.komorebi-control-menu .button.stop {
+  color: var(--color-komorebi-control-stop);
+}
+.komorebi-control-menu .button.reload {
+  color: var(--color-komorebi-control-reload);
+}
+
+.komorebi-control-menu .button.start:hover {
+  color: var(--color-komorebi-control-start-hover);
+}
+.komorebi-control-menu .button.stop:hover {
+  color: var(--color-komorebi-control-stop-hover);
+}
+.komorebi-control-menu .button.reload:hover {
+  color: var(--color-komorebi-control-reload-hover);
+}
+
+.komorebi-control-menu .button:disabled {
+  background-color: transparent;
+  color: var(--color-text-disabled);
+}
+
+.komorebi-control-menu .footer .text {
+  font-size: var(--font-size-text);
+  color: var(--color-text-disabled);
+}

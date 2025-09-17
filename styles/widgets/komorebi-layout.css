@@ -1,0 +1,32 @@
+/* KOMOREBI LAYOUT WIDGET */
+.komorebi-active-layout .label {
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+  margin: 2px 0 0;
+}
+
+.komorebi-layout-menu {
+  background-color: var(--color-background-main-transparent);
+}
+.komorebi-layout-menu .menu-item {
+  font-size: var(--font-size-icon);
+  color: var(--color-text);
+  padding: 8px 16px;
+}
+.komorebi-layout-menu .menu-item-icon {
+  font-size: var(--font-size-icon);
+  color: var(--color-text);
+}
+.komorebi-layout-menu .menu-item-text {
+  font-size: var(--font-size-icon);
+  padding-bottom: 2px;
+  padding-left: 2px;
+}
+.komorebi-layout-menu .menu-item:hover {
+  background-color: var(--color-background-light-transparent-20);
+  color: var(--color-text-hover);
+}
+.komorebi-layout-menu .separator {
+  background-color: var(--color-background-secondary);
+  max-height: 1px;
+}

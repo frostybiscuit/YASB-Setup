@@ -1,0 +1,6 @@
+*.log*
+*.local*
+launchpad/
+
+.env
+config.yaml

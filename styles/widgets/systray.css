@@ -1,0 +1,24 @@
+/* SYSTRAY WIDGET */
+.systray .unpinned-container {
+  background-color: var(--color-background-main-transparent);
+  border-radius: 16px;
+  margin-left: 5px;
+  padding: 0 4px;
+}
+.systray .pinned-container {
+  margin-left: 5px;
+}
+.systray .button {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 4px;
+  border: 0;
+}
+.systray .button:hover {
+  background-color: var(--color-background-main-transparent);
+}
+.systray .unpinned-visibility-btn {
+  background-color: transparent;
+  padding: 6px;
+  border: 0;
+}

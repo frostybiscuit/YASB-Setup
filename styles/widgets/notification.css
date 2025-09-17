@@ -1,0 +1,16 @@
+/* NOTIFICATION WIDGET */
+.notification-widget {
+  padding: 0;
+}
+.notification-widget .widget-container {
+  margin: 3px 0 3px 0;
+}
+.notification-widget .icon {
+  color: var(--color-notification);
+  font-size: var(--font-size-text);
+}
+.notification-widget .label {
+  font-size: var(--font-size-icon);
+  margin: 0 6px 0 1px;
+  font-weight: 600;
+}

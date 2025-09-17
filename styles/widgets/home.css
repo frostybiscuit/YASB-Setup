@@ -1,0 +1,29 @@
+/* HOME WIDGET */
+.home-widget {
+  padding: 0 4px;
+}
+.home-widget .icon {
+  color: var(--color-text-hover);
+  font-size: 20px;
+  padding: 6px;
+}
+.home-widget .icon:hover {
+  color: var(--color-primary);
+}
+.home-menu {
+  background-color: var(--color-background-main-transparent);
+}
+.home-menu .menu-item {
+  padding: 6px 48px 7px 16px;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 18px;
+}
+.home-menu .menu-item:hover {
+  background-color: var(--color-background-light-transparent-20);
+  color: var(--color-text-hover);
+}
+.home-menu .separator {
+  background-color: var(--color-background-secondary);
+  max-height: 1px;
+}

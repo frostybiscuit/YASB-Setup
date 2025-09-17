@@ -1,0 +1,17 @@
+/* WEATHER WIDGET */
+.weather-widget .icon {
+  font-size: var(--font-size-icon);
+  margin: 0 2px 1px 0;
+}
+.weather-widget .icon.sunnyDay {
+  color: var(--color-weather-sunny-day);
+}
+.weather-widget .icon.clearNight {
+  color: var(--color-weather-clear-night);
+  margin: 1px 2px 0px 0;
+  font-size: 22px;
+}
+
+.weather-card {
+  background-color: var(--color-background-main-transparent);
+}

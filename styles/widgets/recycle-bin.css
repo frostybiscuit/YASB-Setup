@@ -1,0 +1,8 @@
+/* RECYCLE BIN WIDGET */
+.recycle-bin-widget {
+  padding: 0 6px 0 6px;
+}
+
+.recycle-bin-widget .icon {
+  font-size: var(--font-size-icon);
+}
