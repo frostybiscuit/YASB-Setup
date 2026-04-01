@@ -1,0 +1,19 @@
+.sysinfo-group .container {
+  background-color: var(--color-background-main-transparent);
+  margin: 4px 0;
+  padding: var(--widget-spacing);
+  border-radius: 8px;
+}
+
+.sysinfo-group .grouper-button {
+  font-size: var(--font-size-icon);
+  color: var(--color-text);
+  padding: var(--widget-spacing-small);
+  padding-right: 8px;
+  background-color: transparent;
+  border: none;
+}
+
+.sysinfo-group .grouper-button:hover {
+  color: var(--color-text-hover);
+}

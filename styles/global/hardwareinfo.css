@@ -1,0 +1,104 @@
+.memory-popup,
+.cpu-popup,
+.gpu-popup {
+  background-color: var(--color-background-main-transparent);
+  min-width: 400px;
+}
+
+.memory-popup .header,
+.cpu-popup .header,
+.gpu-popup .header {
+  background: transparent;
+  padding: 12px 16px;
+}
+.memory-popup .header .text,
+.cpu-popup .header .text,
+.gpu-popup .header .text {
+  font-size: 16px;
+  font-family: "Segoe UI";
+  color: var(--color-text);
+}
+.memory-popup .header .pin-btn,
+.cpu-popup .header .pin-btn,
+.gpu-popup .header .pin-btn {
+  font-size: 14px;
+  background: transparent;
+  font-family: "Segoe Fluent Icons";
+  border: none;
+  padding: 6px;
+  color: var(--color-text);
+}
+.memory-popup .header .pin-btn:hover,
+.cpu-popup .header .pin-btn:hover,
+.gpu-popup .header .pin-btn:hover {
+  color: var(--color-text-hover);
+}
+.memory-popup .header .pin-btn.pinned,
+.cpu-popup .header .pin-btn.pinned,
+.gpu-popup .header .pin-btn.pinned {
+  color: var(--color-text-hover);
+}
+
+/* Graph area */
+.memory-popup .graph-container,
+.cpu-popup .graph-container,
+.gpu-popup .graph-container {
+  background: transparent;
+  min-height: 64px;
+}
+.memory-popup .memory-graph,
+.cpu-popup .cpu-graph,
+.gpu-popup .gpu-graph {
+  color: var(--color-primary);
+}
+.memory-popup .memory-graph-grid,
+.cpu-popup .cpu-graph-grid,
+.gpu-popup .gpu-graph-grid,
+.gpu-popup .gpu-temp-graph-grid {
+  color: var(--color-background-light-transparent-05);
+}
+.memory-popup .graph-title,
+.cpu-popup .graph-title,
+.gpu-popup .graph-title {
+  font-size: 12px;
+  color: var(--color-text);
+  padding: 0px 0px 4px 14px;
+}
+.gpu-popup .gpu-temp-graph {
+  color: var(--color-gpu-high-temp);
+}
+.gpu-popup .graph-title.first {
+  margin-top: 0px;
+}
+
+/* Stats grid */
+.memory-popup .stats,
+.cpu-popup .stats,
+.gpu-popup .stats {
+  background: transparent;
+  padding: 16px;
+}
+.memory-popup .stats .stat-item,
+.cpu-popup .stats .stat-item,
+.gpu-popup .stats .stat-item {
+  background-color: var(--color-background-light-transparent-05);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px;
+}
+.memory-popup .stats .stat-label,
+.cpu-popup .stats .stat-label,
+.gpu-popup .stats .stat-label {
+  font-size: 13px;
+  color: var(--color-text);
+  font-weight: 400;
+  padding: 6px 4px 2px 4px;
+}
+.memory-popup .stats .stat-value,
+.cpu-popup .stats .stat-value,
+.gpu-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-hover);
+  padding: 0 4px 12px 4px;
+}

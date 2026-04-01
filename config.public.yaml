@@ -13,25 +13,28 @@ komorebi:
 bars:
   # STATUS BAR PRIMARY
   status-bar: &status-bar
-    screens: ['primary'] 
+    screens: ["primary"]
     widgets:
-      left: ["home","komorebi_control","komorebi_active_layout","media","taskbar"] 
-      center: ["clock","weather"]
-      right: ["systray","volume","bluetooth","bin","power_plan","launchpad","apps","update_check","notifications"]
+      left: ["home", "update_check", "media", "taskbar"]
+      center: ["komorebi_active_layout", "komorebi_control", "clock", "weather"]
+      right: ["systray", "hardwareinfo-group", "sysinfo-group"]
     enabled: true
     class_name: "yasb-bar"
     alignment:
       position: "top"
       center: false
     blur_effect:
-      enabled: true 
-      acrylic: false 
+      enabled: true
+      acrylic: false
       dark_mode: true
       round_corners: true
       border_color: "None"
     window_flags:
       always_on_top: false
       windows_app_bar: true
+      hide_on_fullscreen: true
+      hide_on_maximized: true
+      auto_hide: false
     dimensions:
       width: "100%"
       height: 36
@@ -44,37 +47,63 @@ bars:
   # STATUS BAR SECONDARY
   status-bar-2:
     <<: *status-bar
-    screens: ['*'] 
+    screens: ["*"]
     widgets:
-      left: ["home","komorebi_control","komorebi_active_layout","taskbar"] 
-      center: ["clock"]
-      right: ["media","launchpad","apps"]
+      left: ["home", "taskbar"]
+      center: ["komorebi_active_layout", "komorebi_control", "clock"]
+      right: ["media", "sysinfo-group"]
 
 # WIDGETS
 widgets:
+  # HARDWARE INFO GROUP WIDGET
+  hardwareinfo-group:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "hardwareinfo-group"
+      widgets: ["gpu", "cpu", "memory"]
+      collapse_options:
+        enabled: false
+        exclude_widgets: []
+        expanded_label: "\uf054"
+        collapsed_label: "\uf053"
+        label_position: "left"
+
+  # SYSTEM INFO GROUP WIDGET
+  sysinfo-group:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "sysinfo-group"
+      widgets: ["volume", "microphone", "bluetooth", "wifi", "bin", "power_plan", "launchpad"]
+      collapse_options:
+        enabled: true
+        exclude_widgets: ["launchpad"]
+        expanded_label: "\uf054"
+        collapsed_label: "\uf053"
+        label_position: "left"
+
   # SYSTRAY WIDGET
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
       label_collapsed: "\uf078"
-      label_expanded: "\uf054"
+      label_expanded: "\uf077"
       label_position: "left"
       icon_size: 16
       pin_click_modifier: "alt"
+      use_hook: true
       show_unpinned: false
       show_unpinned_button: true
       show_battery: false
       show_volume: false
       show_network: false
-      container_padding:
-          left: 0
-          top: 0
-          right: 0
-          bottom: 0
+      show_in_popup: true
+      popup:
+        border_color: "None"
+        alignment: "center"
       btn_shadow:
         enabled: false
-  
+
   # MEDIA WIDGET
   media:
     type: "yasb.media.MediaWidget"
@@ -82,8 +111,8 @@ widgets:
       label: "{title} - {artist}"
       label_alt: "{title}"
       max_field_size:
-        label: 20
-        label_alt: 30
+        label: 30
+        label_alt: 50
       callbacks:
         on_left: "toggle_media_menu"
         on_right: "toggle_label"
@@ -97,7 +126,7 @@ widgets:
       scrolling_label:
         enabled: false
         update_interval_ms: 33
-        style: "bounce-ease"  # can be "left", "right", "bounce", "bounce-ease"
+        style: "bounce-ease" # can be "left", "right", "bounce", "bounce-ease"
         separator: " | "
         label_padding: 1
         ease_slope: 20
@@ -127,7 +156,7 @@ widgets:
         enabled: true
         color: "black"
         radius: 3
-        offset: [ 1, 1 ]
+        offset: [1, 1]
 
   # CLOCK WIDGET
   clock:
@@ -146,23 +175,28 @@ widgets:
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: '$env:YASB_WEATHER_API_KEY' # https://www.weatherapi.com/
+      api_key: "$env:YASB_WEATHER_API_KEY" # https://www.weatherapi.com/
       update_interval: 600
       hide_decimal: true
-      location: '$env:YASB_WEATHER_LOCATION'
+      location: "$env:YASB_WEATHER_LOCATION"
       callbacks:
         on_left: "toggle_card"
         on_right: "toggle_label"
-      icons: 
+      icons:
         sunnyDay: "\ue30d"
         clearNight: "\ue32b"
-        cloudyDay: "\udb81\udd99"
+        cloudyDay: "\ue312"
         cloudyNight: "\ue311"
-        rainyDay: "\udb81\ude7e"
-        rainyNight: "\udb81\ude7e"
-        snowyIcyDay: "\udb81\udd98"
-        snowyIcyNight: "\udb81\udd98"
-        blizzard: "\uebaa"
+        rainyDay: "\ue308"
+        rainyNight: "\ue333"
+        snowyDay: "\ue30a"
+        snowyNight: "\ue335"
+        blizzardDay: "\udb83\udf36"
+        blizzardNight: "\udb83\udf36"
+        foggyDay: "\ue303"
+        foggyNight: "\ue346"
+        thunderstormDay: "\ue30f"
+        thunderstormNight: "\ue338"
         default: "\uebaa"
       weather_card:
         blur: true
@@ -178,17 +212,18 @@ widgets:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
-      label_alt: "{volume}"
+      label_alt: "<span>{icon}</span>"
       volume_icons:
-        - "\ueee8"  # Icon for muted
-        - "\uf026"  # Icon for 0-10% volume
-        - "\uf027"  # Icon for 11-30% volume
-        - "\uf027"  # Icon for 31-60% volume
-        - "\uf028"  # Icon for 61-100% volume
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
       callbacks:
+        on_middle: "toggle_label"
         on_right: "exec cmd.exe /c start ms-settings:sound"
       audio_menu:
-        border_color: 'None'
+        border_color: "None"
 
   # APPLICATIONS WIDGET
   apps:
@@ -196,35 +231,35 @@ widgets:
     options:
       label: "{data}"
       app_list:
-        - {icon: "\udb80\ude4b", launch: "C:\\Windows\\explorer.exe"}
-        - {icon: "\ue8da", launch: "cmd.exe /c code --disable-gpu-compositing"}
-        - {icon: "\udb80\udefb", launch: "I:\\Applications\\UniGetUI\\UniGetUI.exe"}
-        - {icon: "\uf489", launch: "wt.exe"}
-        - {icon: "\ueb51", launch: "cmd.exe /c start ms-settings:home"}
-      container_padding: 
+        - { icon: "\udb80\ude4b", launch: "C:\\Windows\\explorer.exe" }
+        - { icon: "\ue8da", launch: "cmd.exe /c code --disable-gpu-compositing" }
+        - { icon: "\udb80\udefb", launch: "I:\\Applications\\UniGetUI\\UniGetUI.exe" }
+        - { icon: "\uf489", launch: "wt.exe" }
+        - { icon: "\ueb51", launch: "cmd.exe /c start ms-settings:home" }
+      container_padding:
         top: 0
         left: 8
         bottom: 0
         right: 8
 
-  # NOTIFICATIONS WIDGET
-  notifications:
-    type: "yasb.notifications.NotificationsWidget"
-    options:
-      label: "<span>\uf476</span> {count}"
-      label_alt: "{count} notifications"
-      hide_empty: true
-      tooltip: false
-      callbacks:
-        on_left: "toggle_notification"
-        on_right: "toggle_label"
-      container_padding:
-        top: 0
-        left: 4
-        bottom: 0
-        right: 4
-      label_shadow:
-        enabled: false
+  # NOTIFICATIONS WIDGET - DISABLED DUE TO CONSTANT READ/WRITE ISSUE
+  # notifications:
+  #   type: "yasb.notifications.NotificationsWidget"
+  #   options:
+  #     label: "<span>\uf476</span> {count}"
+  #     label_alt: "{count} notifications"
+  #     hide_empty: true
+  #     tooltip: false
+  #     callbacks:
+  #       on_left: "toggle_notification"
+  #       on_right: "toggle_label"
+  #     container_padding:
+  #       top: 0
+  #       left: 4
+  #       bottom: 0
+  #       right: 4
+  #     label_shadow:
+  #       enabled: false
 
   # TASKBAR WIDGET
   taskbar:
@@ -299,11 +334,11 @@ widgets:
     options:
       label: "<span>\ue62a</span>"
       menu_list:
-      - { title: "\uf2c0  User Home", path: "~" }
-      - { title: "\uf409  Download", path: "I:\\Downloads" }
-      - { title: "\udb82\uddee   Documents", path: "C:\\Users\\{USERNAME}\\Documents" }
-      - { title: "\uf4e5  Pictures", path: "I:\\Pictures" }
-      - { title: "\uf52c  Videos", path: "I:\\Videos" }
+        - { title: "\uf2c0  User Home", path: "~" }
+        - { title: "\uf409  Download", path: "I:\\Downloads" }
+        - { title: "\udb82\uddee   Documents", path: "C:\\Users\\{USERNAME}\\Documents" }
+        - { title: "\uf4e5  Pictures", path: "I:\\Pictures" }
+        - { title: "\uf52c  Videos", path: "I:\\Videos" }
       system_menu: true
       power_menu: true
       blur: true
@@ -312,7 +347,7 @@ widgets:
       border_color: "None"
       offset_top: 6
       offset_left: 0
-      container_padding: 
+      container_padding:
         top: 0
         left: 0
         bottom: 0
@@ -338,7 +373,7 @@ widgets:
     options:
       label: "<span>{icon}</span>"
       label_alt: "{device_name}"
-      icons: 
+      icons:
         bluetooth_on: "\udb80\udcaf"
         bluetooth_off: "\udb80\udcb2"
         bluetooth_connected: "\udb80\udcb1"
@@ -365,11 +400,6 @@ widgets:
         direction: "down"
         offset_top: 6
         offset_left: 0
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
       callbacks:
         on_left: "toggle_menu"
         on_middle: "do_nothing"
@@ -394,10 +424,10 @@ widgets:
       komorebi_menu:
         blur: true
         round_corners: true
-        round_corners_type: 'normal'
-        border_color: 'None'
-        alignment: 'left'
-        direction: 'down'
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "left"
+        direction: "down"
         offset_top: 6
         offset_left: 0
       label_shadow:
@@ -409,7 +439,7 @@ widgets:
     options:
       hide_if_offline: true
       label: "{icon} {layout_name}"
-      layouts: ['bsp', 'columns', 'rows', 'grid', 'vertical_stack', 'horizontal_stack']
+      layouts: ["bsp", "columns", "rows", "grid", "vertical_stack", "horizontal_stack"]
       layout_icons:
         bsp: "\uebeb"
         columns: "\uebf7"
@@ -426,9 +456,9 @@ widgets:
         paused: "\udb83\udf89"
         tiling: "\udb81\ude40"
       callbacks:
-        on_left: 'toggle_layout_menu'
-        on_middle: 'next_layout'
-        on_right: 'prev_layout'
+        on_left: "toggle_layout_menu"
+        on_middle: "next_layout"
+        on_right: "prev_layout"
       layout_menu:
         blur: true
         round_corners: true
@@ -439,14 +469,14 @@ widgets:
         offset_top: 6
         offset_left: 0
         show_layout_icons: true
-      container_padding: 
+      container_padding:
         top: 0
         left: 0
         bottom: 0
         right: 0
       label_shadow:
         enabled: false
-  
+
   # LAUNCHPAD WIDGET
   launchpad:
     type: "yasb.launchpad.LaunchpadWidget"
@@ -473,3 +503,166 @@ widgets:
         enabled: false
       app_icon_shadow:
         enabled: false
+
+  # WIFI WIDGET
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "exec cmd.exe /c start ms-settings:network"
+        on_right: "toggle_label"
+      ethernet_label: "<span>{wifi_icon}</span>"
+      ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
+      ethernet_icon: "\ueba9"
+      get_exact_wifi_strength: false # Optional. Will require location access permission if true.
+      wifi_icons: [
+          "\udb82\udd2e", # Icon for 0% strength
+          "\udb82\udd1f", # Icon for 1-24% strength
+          "\udb82\udd22", # Icon for 25-49% strength
+          "\udb82\udd25", # Icon for 50-74% strength
+          "\udb82\udd28" # Icon for 75-100% strength
+        ]
+      label_shadow:
+        enabled: false
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        wifi_icons_secured: ["\ue670", "\ue671", "\ue672", "\ue673"]
+        wifi_icons_unsecured: ["\uec3c", "\uec3d", "\uec3e", "\uec3f"]
+
+  # MICROPHONE WIDGET
+  microphone:
+    type: "yasb.microphone.MicrophoneWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "<span>{icon}</span>"
+      mute_text: "mute"
+      icons:
+        normal: "\uf130"
+        muted: "\uf131"
+      mic_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_mic_menu"
+        on_middle: "toggle_label"
+        on_right: "toggle_mute"
+      label_shadow:
+        enabled: false
+
+  # CPU WIDGET
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf4bc</span> {info[freq][current]} MHz"
+      update_interval: 2000
+      hide_decimal: true
+      cpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "exec cmd /c Taskmgr"
+      label_shadow:
+        enabled: false
+      menu:
+        enabled: true
+        border_color: "None"
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+
+  # GPU WIDGET
+  gpu:
+    type: "yasb.gpu.GpuWidget"
+    options:
+      label: "<span>\udb83\udfb2</span> {info[utilization]}%"
+      label_alt: "<span>\udb83\udfb2</span> {info[temp]}°C | {info[mem_used]} / {info[mem_total]}"
+      update_interval: 2000
+      hide_decimal: true
+      gpu_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      histogram_num_columns: 8
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+      menu:
+        enabled: true
+        border_color: "None"
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60
+
+  # MEMORY WIDGET
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\udb81\ude1a</span> {virtual_mem_used}/{virtual_mem_total}"
+      label_alt: "<span>\udb81\ude1a</span> VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "toggle_label"
+        on_right: "do_nothing"
+      memory_thresholds:
+        low: 25
+        medium: 50
+        high: 90
+      histogram_icons:
+        - "\u2581" # 0%
+        - "\u2581" # 10%
+        - "\u2582" # 20%
+        - "\u2583" # 30%
+        - "\u2584" # 40%
+        - "\u2585" # 50%
+        - "\u2586" # 60%
+        - "\u2587" # 70%
+        - "\u2588" # 80%+
+      label_shadow:
+        enabled: false
+      menu:
+        enabled: true
+        border_color: "None"
+        show_graph: true
+        show_graph_grid: true
+        graph_history_size: 60

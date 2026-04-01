@@ -1,10 +1,11 @@
 /* APPS WIDGET */
 .apps-widget {
-  padding: 0 4px;
+  padding: 0 8px;
 }
 .apps-widget .widget-container {
   background-color: var(--color-background-main-transparent);
   border-radius: 13px;
+  padding: var(--widget-spacing);
   margin: 5px 0;
 }
 .apps-widget .label {

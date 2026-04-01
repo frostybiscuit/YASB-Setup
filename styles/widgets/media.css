@@ -29,7 +29,7 @@
 
 .media-menu {
   min-width: 500px;
-  max-width: 500px;
+  max-width: 800px;
   background-color: var(--color-background-main-transparent);
 }
 .media-menu .title,

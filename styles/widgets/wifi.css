@@ -1,0 +1,134 @@
+.wifi-menu {
+  background-color: var(--color-background-main-transparent);
+  max-height: 350px;
+  min-height: 375px;
+  min-width: 375px;
+}
+
+.wifi-menu .progress-bar {
+  max-height: 2px;
+}
+
+.wifi-menu .progress-bar::chunk {
+  background-color: var(--color-primary);
+}
+
+.wifi-menu .header {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 12px;
+  background-color: var(--color-background-main-transparent);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-background-main);
+}
+
+.wifi-menu .error-message {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  padding: 12px;
+  background-color: var(--color-error);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-background-main);
+}
+
+.wifi-menu .wifi-list {
+  background-color: var(--color-background-main-transparent);
+  margin-right: 3px;
+}
+
+.wifi-menu .wifi-item {
+  min-height: 35px;
+  padding: 2px 12px;
+  margin: 2px 4px;
+}
+
+.wifi-menu .wifi-item:hover {
+  background-color: var(--color-background-light-transparent-05);
+  border-radius: 6px;
+}
+
+.wifi-menu .wifi-item[active="true"] {
+  background-color: var(--color-background-light-transparent-10);
+  font-size: 14px;
+  border-radius: 6px;
+  min-height: 80px;
+}
+
+.wifi-menu .wifi-item .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .name {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .password {
+  background-color: transparent;
+  font-size: 15px;
+}
+
+.wifi-menu .wifi-item .status {
+  font-size: 14px;
+}
+
+.wifi-menu .wifi-item .strength {
+  font-size: 14px;
+}
+
+.wifi-menu .wifi-item .controls-container {
+  padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+  background-color: var(--color-background-light-transparent-10);
+  padding: 4px 30px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+  background-color: var(--color-background-light-transparent-20);
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+  background-color: var(--color-background-light-transparent-30);
+}
+
+.wifi-menu .footer {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 2px;
+  color: var(--color-text);
+  background-color: var(--color-background-main-transparent);
+  border-top: 1px solid var(--color-background-main);
+}
+
+.wifi-menu .footer .settings-button {
+  background-color: transparent;
+  border: none;
+  padding: 0 2px;
+  min-width: 26px;
+  min-height: 26px;
+  color: var(--color-text-hover);
+}
+
+.wifi-menu .footer .refresh-icon {
+  font-family: "Segoe Fluent Icons";
+  background-color: transparent;
+  border: none;
+  min-width: 26px;
+  min-height: 26px;
+  color: var(--color-text-hover);
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+  background-color: var(--color-background-light-transparent-10);
+  border-radius: 4px;
+}
