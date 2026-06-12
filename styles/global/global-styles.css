@@ -30,7 +30,7 @@
 }
 
 .tooltip {
-  background-color: var(--color-background-main);
+  background-color: var(--color-background-main-transparent);
   border-radius: 4px;
   color: var(--color-text-main);
   padding: 6px 12px;

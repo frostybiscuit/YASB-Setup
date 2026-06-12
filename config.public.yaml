@@ -2,6 +2,14 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
+tooltip:
+  offset: 5
+  blur_effect:
+    enabled: true
+    dark_mode: true
+    round_corners: true
+    round_corners_type: "small"
+    border_color: "None"
 
 # KOMOREBI SETTINGS
 komorebi:
